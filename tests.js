@@ -9,7 +9,7 @@ describe('MoDom Example', function() {
   })
 })
 
-describe('MoDom Library One 1/10', function(){
+describe('MoDom Library', function(){
     describe('one() 1/10 Function', function(){
         it('should return an object', function(){
             expect(typeof md.one('div')).to.equal('object')
