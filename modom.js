@@ -2,52 +2,53 @@
 
 (function() {
     'use strict'
-    //one(): Find one matching element using any CSS selector
+    //1/10one(): Find one matching element using any CSS selector
+    //
     var one = function(selector) {
         return document.querySelector(selector)
     }
 
-    //all(): Find all matching elements using any CSS selector
+    //2/10all(): Find all matching elements using any CSS selector
     var all = function(selectors) {
         return document.querySelectorAll(selectors)
     }
 
-    //remove(): Remove an element
+    //3/10remove(): Remove an element
     var remove = function(selector) {
          return one(selector).remove()
     }
 
-    //addClass(): Add a CSS class to an element
+    //4/10addClass(): Add a CSS class to an element
     var addClass = function (selector, className) {
             one(selector).classList.add(className)
     }
 
-    //removeClass(): Remove a CSS class from an element
+    //5/10removeClass(): Remove a CSS class from an element
     var removeClass = function(selector, className){
         return one(selector).classList.remove(className)
     }
 
-    //Return true if an element contains a CSS class in it's CSS attribute (see classList documentation)
+    //6/10Return true if an element contains a CSS class in it's CSS attribute (see classList documentation)
     var hasClass = function(selector, className){
         return one(selector).classList.contains(className)
     }
 
-    //getAttr(): Get an HTML attribute from an element
+    //7/10getAttr(): Get an HTML attribute from an element
     var getAttr = function(selector, attribute){
         return one(selector).getAttribute(attribute)
     }
 
-    //setAttr(): Set an HTML attribute on an element
+    //8/10setAttr(): Set an HTML attribute on an element
     var setAttr = function(selector, attribute, value){
         return one(selector).setAttribute(attribute, value)
     }
 
-    //setHTML(): Set the innerHTML of an element
+    //9/10setHTML(): Set the innerHTML of an element
     var setHTML = function(selector, value) {
          one(selector).innerHTML = value
     }
 
-    //getHTML(): Get the innerHTML of an element
+    //10/10getHTML(): Get the innerHTML of an element
     var getHTML = function(selector){
         return one(selector).innerHTML
     }
@@ -74,15 +75,29 @@
         return one(selector).value
     }  //use in form fields
      //Add a setValue() function that sets an form field's value attribute.
-     var setValue = function(selector, value){
-         one(selector).value = value
+     ////class exercise
+    //  var setValue = function(selector, value){
+    //      one(selector).value = value
+    // }
+
+
+
+    // var add = function(value1, value2) {
+    //     var total = value1+ value2
+    //     return total
+    // }
+//or
+    // var add = function() {
+    //     var numbers = Array.from(arguments)
+    //
+    //     var total = numbers.reduce(function(previousNumber, currentNumber){
+    //         return previousNumber + currentNumber
+    //     }, 0)
+    //     return total
+    // }
+    var flipPage = function(degree){
+        return document.body.style.transform = degree
     }
-    // Add an addEvent() function that adds an event listener and callback function to an element.
-    // Add a removeEvent() function that removes an event listener and callback function from an element.
-    // Add a clone() function that makes an exact copy of the original element (see Object.create() documentation).
-    // Add an true/false option to the all() function to return an Array.
-    // Add a getStyle() function to get the computed style properties of an element.
-    // Add a setStyle() function to set the style of an element.
 
     window.md = {
         one: one,
@@ -99,7 +114,7 @@
         getProp: getProp,
         setProp: setProp,
         getValue: getValue,
-        setValue: setValue,
+        flipPage: flipPage,
     }
 }())
 // remove, addclass, remove class, has class, get attribute, set attribute, set html, get html
